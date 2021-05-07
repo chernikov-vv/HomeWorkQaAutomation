@@ -33,7 +33,7 @@ public class TestDb {
 
             String exception = "Ожидалось исключение SQLException в строке, где id = " + count;
 
-            Assertions.assertEquals(false, actual, exception);
+            Assertions.assertFalse(actual, exception);
 
             count++;
         }
@@ -61,11 +61,11 @@ public class TestDb {
 
 
     @Test
-    public void test4() {
+    public void testZooNames() {
         DBService dbService = new DBService();
         dbService.executeQueryUpdate("delete from public.workman where id = 100");
         boolean actual = new DBService().executeQueryUpdate("insert into public.workman(id) values(100)");
 
-        Assertions.assertEquals(false, actual);
+        Assertions.assertFalse(actual);
     }
 }
