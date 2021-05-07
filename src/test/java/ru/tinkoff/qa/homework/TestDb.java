@@ -17,7 +17,7 @@ public class TestDb {
 
 
     @Test
-    public void test() {
+    public void testCountAnimals() {
         int actual = new DBService().executeQueryGetCount("select count (*) from public.animal");
 
         Assertions.assertEquals(10, actual);
